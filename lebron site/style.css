@@ -1,0 +1,357 @@
+/* Resetando o flex-box padrão do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  background-color: rgba(0,0,0,0.5); 
+  background-blend-mode: multiply;
+}
+/* Cabeçalho */
+.main {
+  background-color: black; /*Mudando a cor de fundo do header*/
+  color: white;/*Mudando a cor do texto para branco*/
+  padding: 15px 40px;/*Aplicando um espaçamento interno de 15px para a base e 40px para as laterais*/
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);/*criando uma sobra para o cabeçalho, 0px para deslocamento horizontal para direita, 4px de deslocamento vertical da sombra para baixo, 10px de raio de desfoque, rgba define a cor da sombra  */
+  width:100%;/*o cabeçalho vai ocupar toda a largura disponivel na tela*/
+  z-index:1000;/*O cabeçalho vai ficar sobre qualquer coisa na tela*/
+  position:fixed;/*O cabeçalho vai ficar fixo no topo da tela em qualquer parte do site*/
+
+}
+
+/* Navbar */
+.navbar {
+  display: flex;/*Transforma em um conteiner flex*/
+  justify-content: space-between;/*terá um espaço enter os itens no navbar*/
+  align-items: center;/*alinhará todos os itens ao centro*/
+}
+
+
+
+
+.Home a {
+  font-family: "Arial Black", sans-serif;
+  font-size: 1.5rem;/*Tamanho da fonte em rem que é definido em relação ao font-size do elemento raiz(o <html>)*/
+  text-transform: uppercase;/*vai transformar todas as letras em maiúsculas*/
+  text-decoration: none;/*Tira toda as frufuzisses que tem no texto, no caso ai do <a> vai tirar aquele sublinhado*/
+  color: white
+}
+
+/* Links */
+.links{
+  list-style: none;/*Vai tirar os estilo da lista, no casa como no html está uma lista não ordenada, isso vai tirar aquelas boliquas que ficam*/
+  display: flex;
+  gap: 25px;/*Vai ter um espaço de 25 px entre os elementos da lista*/
+}
+
+.links a {
+  text-decoration: none;/*Tira toda as frufuzisses que tem no texto, no caso ai do <a> vai tirar aquele sublinhado*/
+  color: white;
+  font-weight: bold;/*Define um peso ou espessura pra font, o bold pra um peso mais escuro*/
+  transition: 0.3s;/*Terá uma transição de o.3s quando passar o mouse em cima*/
+  font-family: Arial, sans-serif;
+}
+/*O hover aplica estlo quando passa o mouse por cima de um elemento */     
+.links a:hover {
+  color: #000;
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+section {
+  height: 100vh;/*a section vai tomar toda a altura disponivel na tela*/         
+  width: 100%;/*a section vai tomar toda a largura disponivel na tela*/    
+  display: flex;              
+  flex-direction: column;     
+  justify-content: center;    
+  align-items: center;        
+  padding: 40px;
+}
+
+html {
+  scroll-behavior: smooth;/*vai ter uma rolagem suave ao clicar em links que leva para outra section do site*/
+}
+
+.Home-page{
+  display:grid;
+  padding: 40px;
+  height:90vh;
+  width:100%;
+  background: url(imagens/lebronfundo.jpeg) center/cover no-repeat;/*Vai adicionar uma imagem ao fundo, center vai centralizar a img, o cover vai fazer a imagem preencher toda a largura e disponivel no fundo, o no-repeat irá deixa imagem ficar se repetindo caso ela não consiga preencher toda a largura disponivel*/
+  background-color: rgba(0,0,0,0.5); /* camada escura por cima */
+  background-blend-mode: multiply;   /* mistura a cor com a imagem */
+  padding-top:80px;
+  background-position: center -30%;/*centralizando o background, essa porcentagem é em relação a parte vertical da imagem, está negativo pois estava cortando a careca do lebron james*/
+  margin-bottom:20px;/*Isso aqui vai dá um respiro, para que a imagem do background não fique grudada com a próxima */
+}
+
+
+.bloco h2{
+  text-align: center;/*Alinha o texto ao centro*/
+  font-size: x-large;
+  font-family: arial, sans-serif;
+  color:white;
+  padding-bottom: 30px;/*Distancia de 30px para a parte inferior entre o conteúdo e a borda inferior*/
+}
+.bloco p{
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color:white;
+  line-height: 1.5;/*controla o espaçamento entre as linhas do texto, verticalmente, no caso o 1.5 é em relação ao font-size(16px*1.5=24px)*/
+}
+
+section footer{
+  height: 150px;/*altura do rodapé*/
+  background-color: black;
+  color: white;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  
+}
+footer p{
+  display:flex;
+  padding-right: 30px;/*Espaçamento interno de 30px da borda direita*/
+  width: 25%; /*Cada paragrafo vai pegar 25% da largura total do footer*/
+  text-align: center;
+  padding-top:10px;/*Espaçameto interno de 10px para */
+  justify-content: space-between;
+  flex-direction: column; /*Os elementos são distribuidos em colunas*/
+}
+
+.Highschool{
+  background:url(imagens/lbj---hs.jpg) center/cover no-repeat;/*Vai adicionar uma imagem ao fundo, center vai centralizar a img, o cover vai fazer a imagem preencher toda a largura e disponivel no fundo, o no-repeat irá deixa imagem ficar se repetindo caso ela não consiga preencher toda a largura disponivel*/
+  background-color: rgba(0,0,0,0.5);/*cor de fudo*/
+  background-blend-mode: multiply;/*mescla as cores de fundo com as cores da imagem de fundo*/
+  margin-bottom: 20px;/*Respiro para a section de baixo nao ficar com os backgrounds 'colados'*/
+}
+
+.conteiner{
+  position:relative;
+  display:grid;/*transformando o conteiner em um conteiner grid*/
+  grid-template-columns: 40% 60% ;/*Criando duas colunas, uma vai ocupar 40% da tela e outra vai ocupar 60%*/
+  gap:30px;/*espaço de 30px entre as duas colunas*/
+  max-width: 1200px;/*altura mámima do conterner*/
+  margin:auto;/*Define a área de espaço exetono entre em volta do elemento(no caso do auto o navegador que calcula esse espaço)*/
+
+}
+
+/*esse alinhar é só para o ocupar a coluna na direita que tem 60% da largura da tela */
+.alinhar{
+  width: 100%;
+}
+
+.Highschool h3{
+  font-size: 1.5rem;/*Tamanho da fonte em rem que é definido em relação ao font-size do elemento raiz(o <html>), por padrão o tamnha do elemento raiz é 16px*/
+  margin-bottom: 20px;/*Define o espaço ao redor do elemento, no caso o espaço será de 20px na parte inferior*/
+  font-weight: normal;/*Largura da fonte normal*/
+  color:white;
+  
+}
+
+.Highschool h2{
+  font-size: 2.5rem;/*Tamanho da fonte em rem que é definido em relação ao font-size do elemento raiz(o <html>), por padrão o tamnha do elemento raiz é 16px*/
+  margin-bottom: 10px;/*Define o espaço ao redor do elemento, no caso o espaço será de 10px na parte inferior*/
+  color: white;
+  
+}
+
+.Highschool p{
+  font-size:1rem;/*Tamanho da fonte em rem que é definido em relação ao font-size do elemento raiz(o <html>), por padrão o tamnha do elemento raiz é 16px*/
+  line-height:1.6;/*controla o espaçamento entre as linhas do texto, verticalmente, no caso o 1.5 é em relação ao font-size(16px*1.6=25,6px)*/
+  margin-bottom:15px;/*Define o espaço ao redor do elemento, no caso o espaço será de 15px na parte inferior*/
+  color:white;
+  
+}
+
+.Highschool ul{
+  list-style:none;/*Vai tirar os estilo da lista, no casa como no html está uma lista não ordenada, isso vai tirar aquelas boliquas que ficam*/
+  padding:0;
+  
+}
+
+.Highschool ul li{
+  margin:8px 0;/*O primeiro cria uma margem de 8px horizontal e o segundo uma de 0px vertical*/
+  font-size: 1rem; 
+  color:white;
+  
+}
+
+.card{
+  margin-top: 20px;
+  background: rgba(255,255,255,0.1);
+  padding: 15px;
+  border-radius: 10px;
+  font-style: italic;
+  color:white;
+  
+}
+
+.cta{
+  margin:20px;
+}
+
+.cta a{
+  display: inline-block;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.cta a:hover{
+  color: #000;
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+}
+
+.historia{
+  background: url(imagens/lebron-james-jersey-6-slam-dunk-nba-game-owaamxyxfjpaqpi0.jpg)center/cover no-repeat;
+  background-color: rgba(0,0,0,0.5); 
+  background-blend-mode: multiply;
+}
+
+.historia h3{
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: normal;
+  color:white;
+  
+}
+
+.historia h2{
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: white;
+  
+}
+
+.historia p{
+  font-size:1rem;
+  line-height:1.6;
+  margin-bottom:15px;
+  color:white;
+  
+}
+
+.historia ul{
+  list-style:none;
+  padding:0;
+  
+}
+
+.historia ul li{
+  margin:8px 0;
+  font-size: 1rem; 
+  color:white;
+  
+}
+/* Telas até 1024px (tablet) */
+@media (max-width: 1024px) {
+  .conteiner {
+    grid-template-columns: 1fr; /* Em vez de 40% e 60%, vira coluna única */
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .alinhar {
+    max-width: 90%;
+    margin: auto;
+  }
+
+  .Highschool h2,
+  .historia h2 {
+    font-size: 2rem;
+  }
+
+  .Highschool h3,
+  .historia h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Telas até 768px (celular grande) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Links ficam abaixo do logo */
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .links a {
+    font-size: 1rem;
+  }
+
+  .Home a {
+    font-size: 1.2rem;
+  }
+
+  .bloco h2 {
+    font-size: 1.2rem;
+  }
+
+  .bloco p {
+    font-size: 0.9rem;
+  }
+
+  section {
+    padding: 20px;
+  }
+
+  footer {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+  }
+
+  footer p {
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+/* Telas até 480px (celular pequeno) */
+@media (max-width: 480px) {
+  .Home-page {
+    background-position: center; /* Centraliza melhor em telas pequenas */
+    padding: 20px;
+  }
+
+  .Home a {
+    font-size: 1rem;
+  }
+
+  .links a {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .Highschool h2,
+  .historia h2 {
+    font-size: 1.5rem;
+  }
+
+  .Highschool p,
+  .historia p {
+    font-size: 0.85rem;
+  }
+
+  .cta a {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
